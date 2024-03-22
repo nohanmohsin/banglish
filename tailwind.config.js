@@ -11,7 +11,8 @@ module.exports = {
       white: "#ffffff",
       green: "#80E897",
       black: "#000000",
-      gray: "#606060",
+      gray: "#F3F3F3",
+      "gray-500": "#606060",
     },
     extend: {
       fontSize: {
@@ -20,6 +21,7 @@ module.exports = {
     },
     screens: {
       "new-sm": { raw: "(orientation: portrait) and (max-width: 640px)" },
+      "bigger-sm": { raw: "(orientation: landscape) and (min-width: 640px)" },
     },
   },
   plugins: [],
