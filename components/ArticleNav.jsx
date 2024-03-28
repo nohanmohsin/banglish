@@ -3,12 +3,13 @@ import fs from "fs";
 import Link from "next/link";
 import Image from "next/image";
 import Arrow from "@/public/Arrow 1.svg";
+import path from "path";
 
 const ArticleNav = async ({ currentSlug }) => {
   const metaDatas = [];
   const slugs = [];
   const folder = "content/docs/";
-  const docs = fs.readdirSync(folder);
+  const docs = fs.readdirSync(path.resolve(process.cwd(), folder));
   const fileNames = docs.map((file) => file.replace(".mdx", "")).reverse();
   //get the metadata from using slugs and set the titles
   for (const name of fileNames) {

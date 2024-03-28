@@ -3,11 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../public/Frame 12.svg";
 import fs from "fs";
+import path from "path";
 
 const getAllPostsMetadata = async () => {
   //get the names of the documents to generate slugs
   const folder = "content/docs/";
-  const files = fs.readdirSync(folder);
+  const files = fs.readdirSync(path.resolve(process.cwd(), folder));
   const docs = files.filter((file) => file.endsWith(".mdx"));
   const fileNames = docs.map((file) => file.replace(".mdx", "")).reverse();
   const titles = [];

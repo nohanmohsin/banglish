@@ -1,7 +1,7 @@
 import ArticleNav from "@/components/ArticleNav";
 
 export async function generateMetadata({ params }) {
-  const { metaData } = await import(`@/content/docs/${params.slug}.mdx`);
+  const { metaData } = await import(`/content/docs/${params.slug}.mdx`);
   return { title: metaData.title };
 }
 const Page = async ({ params }) => {
