@@ -8,7 +8,7 @@ const ArticleNav = async ({ currentSlug }) => {
   const metaDatas = [];
   const slugs = [];
   const folder = "content/docs/";
-  const docs = fs.readdirSync(process.cwd() + folder);
+  const docs = fs.readdirSync(path.join(process.cwd(), folder));
   const fileNames = docs.map((file) => file.replace(".mdx", "")).reverse();
   //get the metadata from using slugs and set the titles
   for (const name of fileNames) {
