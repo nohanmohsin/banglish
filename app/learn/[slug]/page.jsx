@@ -6,9 +6,7 @@ export async function generateMetadata({ params }) {
   return { title: metaData.title };
 }
 const Page = async ({ params }) => {
-  const Content = dynamic(
-    import(`/content/docs/${params.slug}.mdx`).then((module) => module.default)
-  );
+  const Content = (await import(`/content/docs/${params.slug}.mdx`)).default;
 
   console.log(Content);
   return (
