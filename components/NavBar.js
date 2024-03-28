@@ -8,7 +8,6 @@ const NavBar = ({ link }) => {
       }`}
     >
       <Image src={Logo}></Image>
-      {/* <Image className={`${link === "learn" ? "" : "hidden"}`} /> */}
     </nav>
   );
 };

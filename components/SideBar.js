@@ -7,7 +7,7 @@ import fs from "fs";
 const getAllPostsMetadata = async () => {
   //get the names of the documents to generate slugs
   const folder = "content/docs/";
-  const files = fs.readdirSync(folder);
+  const files = fs.readdirSync(process.cwd() + folder);
   const docs = files.filter((file) => file.endsWith(".mdx"));
   const fileNames = docs.map((file) => file.replace(".mdx", "")).reverse();
   const titles = [];
